@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/plugins/pubsub/src/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/jackson-all-1.9.11.jar"/>
+	<classpathentry kind="lib" path="lib/mysql.jar"/>
+	<classpathentry kind="lib" path="lib/openfire.jar"/>
+	<classpathentry kind="lib" path="lib/servlet.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

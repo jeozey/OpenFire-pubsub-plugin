@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+    <!-- Main plugin class -->
+    <class>com.lulu.openfire.plugin.PubSubPlugin</class>
+    
+    <!-- Plugin meta-data -->
+    <name>PubSub</name>
+    <description>pubsub service manage</description>
+    <author>Mark Liu</author>
+    <version>1.0.0</version>
+    <date>12/1/2012</date>
+    <minServerVersion>3.7.0</minServerVersion>   
+
+    <!-- UI extension -->
+    <adminconsole>
+        <tab id="tab-server" >
+            <sidebar id="pub-sub" name="pubsub manage" description="pubsub manage">
+                <item id="nodelist" name="Topic Summary"
+                      url="main.jsp"
+                      description="Topic list">
+                    <sidebar id="node-options" name="Topic Options">
+                        <item id="node-items" name="Published Items"
+                            url="topic.jsp"
+                            description="topic list" />
+                        <item id="node-subscribers" name="Subscribers"
+                            url="subscribers.jsp"
+                            description="node subscribers" />
+                    </sidebar>
+                </item>
+                <item id="node-create" name="Create New Topic"
+                      url="topic-create.jsp"
+                      description="ccc"/>
+            </sidebar>
+        </tab>
+    </adminconsole>
+    
+</plugin>
