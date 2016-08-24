@@ -11,13 +11,13 @@ import org.jivesoftware.openfire.XMPPServer;
 import org.jivesoftware.openfire.pubsub.CollectionNode;
 import org.jivesoftware.openfire.pubsub.DefaultNodeConfiguration;
 import org.jivesoftware.openfire.pubsub.LeafNode;
+import org.jivesoftware.openfire.pubsub.MyLeafNode;
 import org.jivesoftware.openfire.pubsub.Node;
 import org.jivesoftware.openfire.pubsub.NodeSubscription;
 import org.jivesoftware.openfire.pubsub.PubSubModule;
 import org.jivesoftware.openfire.pubsub.PubSubPersistenceManager;
 import org.jivesoftware.openfire.pubsub.PublishedItem;
 import org.jivesoftware.openfire.user.UserManager;
-import org.jivesoftware.util.WebManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xmpp.packet.JID;
@@ -104,7 +104,13 @@ public class PubSubManager {
     		return false;
     	}
     	JID creator = XMPPServer.getInstance().createJID("admin", null);
-    	LeafNode newTopic = new LeafNode(pubSubModule, parentNode, topicId, creator);
+    	    
+	    MyLeafNode newTopic = new MyLeafNode(this.pubSubModule, parentNode, topicId, 
+	      creator);
+	    newTopic.setName("RJ测试名称");
+	    newTopic.setDescription("RJ测试描述信息");
+    	    
+    	    
     	 logger.info("创建 Leaf节点："+topicId);
     	newTopic.addOwner(creator);
     	newTopic.saveToDB();
